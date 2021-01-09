@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/posts';
-const QandAUrl = 'http://localhost:5000/qandas';
+const url = 'https://ugiv-web.herokuapp.com/posts';
+const QandAUrl = 'https://ugiv-web.herokuapp.com/qandas';
 
 export const fetchPosts = () => axios.get(url);
 export const createPost = (newPost) => axios.post(url, newPost);

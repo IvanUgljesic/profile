@@ -30,8 +30,7 @@ export default makeStyles((theme) => ({
       border: `2px solid ${theme.palette.primary.main}`
     },
     singleCard: {
-      marginBottom: '8px',
-      opacity: 0.7
+      marginBottom: '8px'
     },
     overlay: {
       position: 'absolute',
