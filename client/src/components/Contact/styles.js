@@ -31,8 +31,11 @@ export default makeStyles((theme) => ({
   form: {
     padding: '3em',
     minHeight: '60vh',
-    minWidth: '40vw',
+    minWidth: '80%',
     background: `url(${cardBackground})`,
     backgroundSize: 'cover',
+    left:0,
+    right: 0,
+    top: 0
   }
 }));

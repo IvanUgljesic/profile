@@ -22,7 +22,6 @@ export default makeStyles((theme) => ({
       backgroundColor: 'transparent',
       minHeight: '90vh',
       [theme.breakpoints.down('sm')]: { 
-        alignItems: 'center',
         margin: '12px auto'
       },
     },

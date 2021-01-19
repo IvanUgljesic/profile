@@ -9,7 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import axios from 'axios';
+import { sendEmail, resetStatus } from '../../actions/sendEmail';
+import { useDispatch, useSelector } from 'react-redux';
 
 import useStyles from './styles';
 import { HiOutlineMail } from 'react-icons/hi';
@@ -17,8 +18,6 @@ import { CgProfile } from 'react-icons/cg';
 import { BiMessageDetail } from 'react-icons/bi';
 import { SiProbot } from 'react-icons/si';
 import clsx from 'clsx';
-
-import { useSelector } from 'react-redux';
 
 
 const getSteps = () => {
@@ -50,6 +49,7 @@ const ColorlibStepIcon = (props) => {
 
 const Contact = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
   const [error, setError] = React.useState({
@@ -66,7 +66,8 @@ const Contact = () => {
       randNo1: Math.floor(Math.random()*10+1),
       randNo2: Math.floor(Math.random()*10+1),
   });
-  const [result, setResult] = React.useState(null);
+  const result = useSelector(state => state.email);
+
   const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   const handleChange = (e) => {
@@ -144,7 +145,7 @@ const Contact = () => {
       }
       step = flag ? step:step-1;
     setActiveStep(step);
-    if(step === 4)sendEmail();
+    if(step === 4)handleSendEmail();
   };
 
   const handleBack = () => {
@@ -161,18 +162,11 @@ const Contact = () => {
         randNo2: Math.floor(Math.random()*10+1),
     }); 
     setActiveStep(0);
-    setResult(null);
+    dispatch(resetStatus());
   };
 
-  const sendEmail = () => {
-    axios
-     .post('/send', { ...state })
-     .then(response => {
-       setResult(response.data);
-     })
-     .catch((err) => {
-       setResult({ success: false, message: 'Something went wrong. Try again later'});
-   });
+  const handleSendEmail = () => {
+    dispatch(sendEmail(state))
   }
 
   return (
@@ -212,7 +206,7 @@ const Contact = () => {
       </Stepper>
       {activeStep === steps.length && (
         <Paper square elevation={6} className={classes.resetContainer}>
-          { !result ?
+          { !result.success ?
           <CircularProgress style={{color: 'primary'}}/> :
           <Typography color={result && result.success ? "primary":"error"}>{result && result.message}</Typography>
           }

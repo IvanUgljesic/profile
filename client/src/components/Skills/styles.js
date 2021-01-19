@@ -3,11 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
     root:{
         flexGrow: 1,
-        maxWidth: '100%',
+        width: '100%',
+        left: 0,
+        right: 0,
         minHeight: '90vh',
         backgroundColor: 'inherit',
-        margin: theme.spacing(1),
-        padding: theme.spacing(2),
         borderRadius: '20px',
         [theme.breakpoints.down('sm')]:{
             padding: 0,
