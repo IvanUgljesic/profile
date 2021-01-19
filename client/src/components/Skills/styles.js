@@ -15,6 +15,7 @@ export default makeStyles((theme) => ({
         }
     },
     canvas: {
+        opacity: "1"
     },
     techBox: {
         margin: '0 8px',

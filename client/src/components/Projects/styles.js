@@ -5,13 +5,21 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
     maxWidth: '100%',
     padding: theme.spacing(1),
+    alignItems: 'flex-start'
+    },
+    rootCollapse: {
+      height: '100%'
     },
     media: {
       height: 0,
-      paddingTop: '56.25%',
-      backgroundColor: 'rgba(0, 0, 0, 0.1)',
-      backgroundBlendMode: 'darken',
+      paddingTop: '100%', // 16:9,
+      backgroundSize: '100% 100%',
       backgroundPosition: 'top left',
+    },
+    mediaCollapsed: {
+      height: "130px",
+      backgroundSize: 'cover',
+      width: '100%',
     },
     border: {
       border: 'solid',
@@ -20,26 +28,44 @@ export default makeStyles((theme) => ({
       height: '100%',
     },
     card: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-      borderRadius: '15px',
-      height: '100%',
-      position: 'relative',
-      margin: theme.spacing(1),
+      maxWidth: '100%',
+      overflow: 'hidden',
+    },
+    markedCard: {
+      maxWidth: '100%',
+      overflow: 'hidden',
       border: `2px solid ${theme.palette.primary.main}`
     },
     singleCard: {
-      marginBottom: '8px'
+      marginBottom: '8px',
+      height: '100%'
+    },
+    singleCardSceleton: {
+      marginBottom: '8px',
+      minHeight: '100%',
+      backgroundColor: '#FFF'
+    },
+    sceletonText: {
+      backgroundColor: '#FFF',
+      maxWidth: '20vw',
+      borderRadius: '2px'
+    },
+    singleCardCollapse: {
+      height: '120px'
     },
     overlay: {
       position: 'absolute',
-      top: '20px',
-      left: '20px',
-      color: 'white',
-      backgroundColor: theme.palette.primary.main,
-      padding: theme.spacing(2),
-      borderRadius: '5px'
+      top: '0',
+      left: '0',
+      color: '#FFF',
+      backgroundColor: "#000",
+      opacity: 0.75,
+      width: '100%',
+      height: '100%',
+      textShadow: '2px 2px rgba(0,0,0,0.09)',
+    },
+    displayNone : {
+      display: 'none'
     },
     overlay2: {
       position: 'absolute',
@@ -53,7 +79,6 @@ export default makeStyles((theme) => ({
     details: {
       display: 'flex',
       justifyContent: 'space-between',
-      margin: '20px'
     },
     title: {
       padding: '0 16px',
@@ -65,5 +90,5 @@ export default makeStyles((theme) => ({
     },
     loadingBox: {
       minHeight: '60vh'
-    }
+    },
 }));

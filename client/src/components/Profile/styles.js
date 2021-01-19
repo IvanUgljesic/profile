@@ -147,6 +147,9 @@ export default makeStyles((theme) => ({
   jokeBtnBox: {
     marginLeft: 'auto'
   },
-  sideBox: {
+  chip: {
+    backgroundColor: 'white',
+    color: theme.palette.primary.main,
+    opacity: 0.75
   }
 }));

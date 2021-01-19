@@ -1,8 +1,10 @@
 import React from 'react';
 import { AppBar, Grid, IconButton, MenuItem, Menu, Typography, Box } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
 import ThemeSwticher from './ThemeSwitcher';
 
+
+//icons
+import MenuIcon from '@material-ui/icons/Menu';
 
 import useStyles from './styles';
 
@@ -36,8 +38,8 @@ const Header = ({ handleChange, a11yProps, NavLink, setAnchorEl, value, anchorEl
           </Menu>
           </Box>
           </Grid>
-          <Grid item xs={10} md={4}>
-          <Typography variant="h5" align="center" color="primary">{currentPage[value]}</Typography>
+          <Grid item xs={10} md={4} className={classes.currentPage}>        
+            <Typography variant="h5" align="center" className={classes.title}>  {currentPage[value]}</Typography>
           </Grid>
           <Grid item xs={1} md={7}>
             <ThemeSwticher />

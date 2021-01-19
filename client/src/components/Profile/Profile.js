@@ -1,6 +1,6 @@
 import React from 'react';
 import useStyles from './styles';
-import { Grid, Box, CardContent, Typography, IconButton, Paper, CardActions, Collapse, Tooltip, withStyles, Button  } from '@material-ui/core';
+import { Grid, Box, CardContent, Typography, IconButton, Paper, CardActions, Collapse, Tooltip, withStyles, Button, Chip } from '@material-ui/core';
 import { GitHub, LinkedIn, ExpandMore } from '@material-ui/icons';
 import GeneralInfo from './GeneralInfo';
 import JokeBox from './JokeBox';
@@ -66,8 +66,13 @@ const Profile = ({ contactLink }) => {
                     </div>
                     <CardContent className={classes.cardBody}>
                         <img src={profile} alt="profile" className={classes.profileImage} />
-                        <Typography variant="h5" paragraph>Ivan Ugljesic</Typography>
-                        <Typography variant="caption" paragraph color="primary">Junior Web Developer</Typography>
+                        <Typography variant="h5" paragraph>Ivan Ugljesic</Typography>  
+                        <Typography component="div" gutterBottom>                   
+                            <Chip
+                            className={classes.chip}
+                            label="Junior Web Developer"
+                            />
+                        </Typography> 
                         <Typography variant="body1" align="justify" component="div" gutterBottom>Hi, my name is Ivan and I am a self-taught developer. 
                         I first started with Java, where I learned basic programming concepts such as data structures, oop, and the core java programming.                      
                         <Collapse in={expanded} timeout="auto" unmountOnExit>

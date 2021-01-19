@@ -2,6 +2,7 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { green, blue } from '@material-ui/core/colors';
 import Radio from '@material-ui/core/Radio';
 
+
 export default makeStyles((theme) => ({
     appBar: {
         borderRadius: 15,
@@ -10,7 +11,8 @@ export default makeStyles((theme) => ({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: theme.spacing(2),
-        opacity: '0.8'
+        opacity: 0.75,
+        backgroundColor: 'white'
         //border: `3px solid ${theme.palette.primary.main}`
       },
       menu: {
@@ -19,8 +21,21 @@ export default makeStyles((theme) => ({
       radioGroup: {
         display: 'flex',
         flexDirection: 'row',
-        flexWrap: 'nowrap'
+        flexWrap: 'nowrap',
       },
+      title: {
+        color: '#000',
+        opacity: 1,   
+        justifyContent: 'center',
+        fontWeight: 700,
+        marginLeft: theme.spacing(1)   
+      },
+      currentPage: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }
 }));
 
 export const GreenRadio = withStyles({

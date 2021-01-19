@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardActions, CardContent, CardMedia, Button, Typography, Tooltip, withStyles } from '@material-ui/core';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, Tooltip, withStyles, CardActionArea } from '@material-ui/core';
 
 import { GiAerialSignal } from 'react-icons/gi';
 import { AiFillGithub } from 'react-icons/ai';
@@ -17,22 +17,35 @@ const LinksTooltip = withStyles((theme) => ({
     }
 }))(Tooltip);
 
-const Project = ({ project }) => {
+const Project = ({ project, setCurrentProject, setGrid, grid, currentProject }) => {
     const classes = useStyles();
+    const [showDetails, setShowDetails] = React.useState(false);
+
+    const handleClick = () => {
+        setGrid(false);
+        setCurrentProject(project);
+    }
 
     return (
-        <Card className={classes.card}>
-            <CardMedia className={classes.media} image={project.selectedFile} title={project.title}/>
-            <div className={classes.overlay}>
-                <Typography variant="h6">{project.title}</Typography>
-            </div>
-            <div className={classes.details}>
-                <Typography variant="body2" color="textSecondary">{project.tags.map((tag)=> `#${tag.trim()} `)}</Typography>
-            </div>
-                <Typography variant="h5" className={classes.title} gutterBottom>{project.title}</Typography>
+        project ?
+        <Card 
+        className={project !== currentProject ? classes.card:classes.markedCard} 
+        onClick={handleClick}       
+        onMouseOver={() => setShowDetails(true)}
+        onMouseOut={() => setShowDetails(false)}
+        >
+        <CardActionArea>        
+        <CardMedia 
+        className={grid ? classes.media: classes.mediaCollapsed} 
+        image={project.selectedFile} 
+        title={project.title}         
+        />
+            <div className={showDetails ? classes.overlay:classes.displayNone}>
             <CardContent>
-                <Typography variant="body2" color="primary" component="p">{project.description}</Typography>
-            </CardContent>
+                <Typography variant={grid ? "subtitle1":"caption"} align="center" style={{opacity: "1"}} gutterBottom>{project.title}</Typography>
+            </CardContent>            
+            </div>
+        </CardActionArea>
             <CardActions className={classes.cardActions}>
                 <LinksTooltip title={project.liveUrl ? "visit live version of this project":" currently there is no live version of this project" }>
                 <Button size="small" style={{color: project.liveUrl ? '#43a047': 'grey' , textTransform: 'none'}} href={project.liveUrl} target="_blank" rel="noreferrer">
@@ -47,7 +60,7 @@ const Project = ({ project }) => {
                 </Button>
                 </LinksTooltip>
             </CardActions>
-        </Card>
+        </Card>:''
     )
 }
 
