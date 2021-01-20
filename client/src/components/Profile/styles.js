@@ -13,6 +13,7 @@ export default makeStyles((theme) => ({
     position: 'relative',
     paddingTop: '3rem',
     clear: 'both',
+    backgroundColor: 'white',
     [theme.breakpoints.up('sm')]: { 
       paddingTop: '4rem',
     },
@@ -21,8 +22,8 @@ export default makeStyles((theme) => ({
     },
    }, 
    profilePaper: {
-    backgroundColor:'inherit',
-    color: 'white',
+    backgroundColor:'white',
+    color: '#000',
    },
    cardImgBlock: {
     float:'left',

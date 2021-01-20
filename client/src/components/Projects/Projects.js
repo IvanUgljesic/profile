@@ -29,7 +29,7 @@ const Projects = () => {
             <Collapse in={grid} timeout={300} collapsedHeight={130}>
             <Grid container spacing={1} className={grid ? classes.root:classes.rootCollapse}>
                 <Grid item xs={12} align="flex-start">
-                    <Typography variant="caption" style={{color: 'white'}}>* click on a project for details</Typography>
+                    <Typography variant="caption" color="primary">* click on a project for details</Typography>
                 </Grid>
                 {
                     projects.map((project) => (

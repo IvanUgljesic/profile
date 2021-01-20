@@ -73,7 +73,7 @@ const Profile = ({ contactLink }) => {
                             label="Junior Web Developer"
                             />
                         </Typography> 
-                        <Typography variant="body1" align="justify" component="div" gutterBottom>Hi, my name is Ivan and I am a self-taught developer. 
+                        <Typography variant="body1" align="justify" component="div" gutterBottom>Hi, my name is Ivan and I am a web developer. 
                         I first started with Java, where I learned basic programming concepts such as data structures, oop, and the core java programming.                      
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                         After learning all the basics, I spent most of my programming time on the online platform named codewars, developing my problem-solving skills.
@@ -82,7 +82,7 @@ const Profile = ({ contactLink }) => {
                         <Typography variant="body1" align="justify" component="div" gutterBottom>
                             After that, I started working with front-end technologies, making web presentations for small businesses of my friends and acquaintances.                     
                         <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        For these needs I mostly used the online server platform "mars", product of "enon-solutions" company, where I spent three weeks as an intern.
+                        For these needs I mostly used the online server platform <Button size="small" href="https://www.mars-server.net/"  target="_blank"><Typography variant="body1" className={classes.contactBtn} color="primary">"MARS"</Typography></Button>, product of "enon-solutions" company, where I spent three weeks as an intern.
                         I used free themes and snippets, customizing them with the help of bootstrap and JQuery, and a little bit of Vue.js
                         (at the time i didnt really know what component is).
                         </Collapse>

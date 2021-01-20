@@ -21,7 +21,7 @@ const Header = ({ handleChange, a11yProps, NavLink, setAnchorEl, value, anchorEl
         <AppBar className={classes.appBar} position="static" color="inherit">   
         <Grid container spacing={2} alignItems="center">     
         <Grid item xs={1}>
-        <Box display={{ xs: 'flex', sm: 'flex', md: 'none' }}>
+        <Box display={{ xs: 'flex', sm: 'flex', md: 'flex' }}>
           <IconButton edge="start" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} color="primary">
             <MenuIcon />
           </IconButton>
@@ -38,10 +38,10 @@ const Header = ({ handleChange, a11yProps, NavLink, setAnchorEl, value, anchorEl
           </Menu>
           </Box>
           </Grid>
-          <Grid item xs={10} md={4} className={classes.currentPage}>        
+          <Grid item xs={10} className={classes.currentPage}>        
             <Typography variant="h5" align="center" className={classes.title}>  {currentPage[value]}</Typography>
           </Grid>
-          <Grid item xs={1} md={7}>
+          <Grid item xs={1}>
             <ThemeSwticher />
           </Grid>
           </Grid> 

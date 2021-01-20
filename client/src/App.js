@@ -79,7 +79,7 @@ const App = () => {
         <Container maxWidth="lg" className={classes.root}>     
         <Header handleChange={handleChange} a11yProps={a11yProps} NavLink={NavLink} setAnchorEl={setAnchorEl} value={value} anchorEl={anchorEl} />  
         <div className={classes.appBarContainer}>
-          <Box display={{ xs: 'none', sm: 'none', md: 'flex' }}>
+          <Box display={{ xs: 'none', sm: 'none', md: 'none' }}>
             <Tabs
                 orientation="vertical"
                 value={value}

@@ -24,7 +24,7 @@ export default makeStyles((theme) => ({
         flexWrap: 'nowrap',
       },
       title: {
-        color: '#000',
+        color: theme.palette.primary.main,
         opacity: 1,   
         justifyContent: 'center',
         fontWeight: 700,

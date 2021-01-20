@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
       width: 38,
     },
     gridBtn: {
-      color: '#FFF'
+      color: theme.palette.primary.main
     },
     projectContent: {
       minHeight: '35vh',
@@ -88,7 +88,7 @@ const ProjectDetails = ({ currentProject, setGrid, setCurrentProject }) => {
 
     return (
       <div className={classes.root}>
-        <Box><IconButton edge="start" size="medium" style={{color:"#FFF"}} onClick={handleClick}><BsFillGridFill /></IconButton></Box>
+        <Box><IconButton edge="start" size="medium" className={classes.gridBtn} onClick={handleClick}><BsFillGridFill /></IconButton></Box>
         <Card>
         <Grid container align="space-between">
           <Grid item xs={12} md={6} align="center" className={classes.projectContent}>

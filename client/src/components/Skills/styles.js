@@ -7,7 +7,6 @@ export default makeStyles((theme) => ({
         left: 0,
         right: 0,
         minHeight: '90vh',
-        backgroundColor: 'inherit',
         borderRadius: '20px',
         [theme.breakpoints.down('sm')]:{
             padding: 0,
@@ -60,7 +59,6 @@ export default makeStyles((theme) => ({
         display: 'flex',
         flexDirection:'row',
         justifyContent: 'center',
-        opacity: 0.85,
         border: `2px solid ${theme.palette.primary.main}`,
         [theme.breakpoints.down('md')]:{
             minHeight: '50vh',
@@ -120,7 +118,6 @@ export default makeStyles((theme) => ({
         width: '80%',
         minHeight: '20vh',
         display: 'flex',
-        opacity: 0.7,
         justifyContent: 'center',
         border: `2px solid ${theme.palette.primary.main}`,
         [theme.breakpoints.down('sm')]:{

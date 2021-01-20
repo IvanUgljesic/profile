@@ -34,7 +34,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 
   return (
     <Grid container spacing={1} justify="flex-end">  
-      <Box display={{ xs: 'none', sm: 'none', md: 'flex' }}>
+      <Box display={{ xs: 'none', sm: 'none', md: 'none' }}>
       <Grid container spacing={2} alignItems="stretch" justify="space-around">
         <Grid item xs={8}>
           <FormControl variant="outlined" control="radio" focused={true} fullWidth>
@@ -86,7 +86,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
         </Grid>
       </Grid>
       </Box>      
-      <Box display={{ sm: 'flex', md: 'none' }}>
+      <Box display={{ sm: 'flex', md: 'flex' }}>
         <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
           <SettingsIcon color="primary"/>
         </Button>
