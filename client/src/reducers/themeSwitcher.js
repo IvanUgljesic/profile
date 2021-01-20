@@ -1,7 +1,7 @@
 const colors = ['#36A39A', '#1e88e5', '#43a047', '#4D76A3'];
 const fonts = ['Itim', 'PT Serif, serif', 'Roboto Slab, serif', 'Ubuntu, sans-serif', 'Caveat, cursive'];
 
- const theme = (theme = { color: colors[1], colorIndex: 1, font: fonts[0]}, action) => {
+ const theme = (theme = { color: colors[3], colorIndex: 3, font: fonts[3]}, action) => {
     switch(action.type){
         case 'CHANGE_COLOR':
             return {

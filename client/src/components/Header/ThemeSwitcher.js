@@ -9,8 +9,8 @@ import SettingsIcon from '@material-ui/icons/Settings';
 
  const ThemeSwitcher = () => {
   const classes = useStyles();
-  const [selectedValue, setSelectedValue] = React.useState('1');
-  const [selectedFont, setSelectedFont] = React.useState(0);
+  const [selectedValue, setSelectedValue] = React.useState('3');
+  const [selectedFont, setSelectedFont] = React.useState(3);
   const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
