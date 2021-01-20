@@ -16,6 +16,9 @@ const Header = ({ handleChange, a11yProps, NavLink, setAnchorEl, value, anchorEl
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
 
     return (        
         <AppBar className={classes.appBar} position="static" color="inherit">   
@@ -29,7 +32,8 @@ const Header = ({ handleChange, a11yProps, NavLink, setAnchorEl, value, anchorEl
             id="simple-menu"
             anchorEl={anchorEl}
             keepMounted
-            open={Boolean(anchorEl)}           
+            open={Boolean(anchorEl)} 
+            onClose={handleClose}          
           >
             <MenuItem className={classes.menu} onClick={() => handleChange(null, 0)} {...a11yProps(0)} component={NavLink} to="/">Profile</MenuItem>
             <MenuItem className={classes.menu} onClick={() => handleChange(null, 1)} {...a11yProps(1)} component={NavLink} to="/skills">Skills</MenuItem>

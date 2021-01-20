@@ -29,7 +29,6 @@ export default makeStyles((theme) => ({
     backgroundColor: 'inherit'
   },
   form: {
-    padding: '3em',
     minHeight: '60vh',
     minWidth: '80%',
     background: `url(${cardBackground})`,

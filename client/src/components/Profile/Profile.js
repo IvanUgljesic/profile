@@ -54,7 +54,7 @@ const Profile = ({ contactLink }) => {
     return (
         <Grid container spacing={3} alignItems="flex-start" className={classes.root}>
             <Grid item sm={12} md={4} lg={3}>
-                <Grid container spacing={2} alignItems="center">
+                <Grid container spacing={2} alignItems="center" className={classes.jokeAndGenInfoBox}>
                     <Grid item xs={12} sm={6} md={12}><GeneralInfo /></Grid>
                     <Grid item xs={12} sm={6} md={12}><JokeBox /></Grid>           
                 </Grid>

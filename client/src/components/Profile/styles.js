@@ -152,5 +152,11 @@ export default makeStyles((theme) => ({
     backgroundColor: 'white',
     color: theme.palette.primary.main,
     opacity: 0.75
+  },
+  jokeAndGenInfoBox: {
+    left: 0,
+    right: 0,
+    width: '100%',
+    margin: '0 auto',
   }
 }));

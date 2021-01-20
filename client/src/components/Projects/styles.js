@@ -3,12 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
    root:{
     flexGrow: 1,
-    maxWidth: '100%',
-    padding: theme.spacing(1),
-    alignItems: 'flex-start'
+    width: '100%',
+    alignItems: 'center'
     },
     rootCollapse: {
-      height: '100%'
+      height: '100%',
+      alignItems: 'center'
     },
     media: {
       height: 0,

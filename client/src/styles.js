@@ -49,6 +49,7 @@ export default makeStyles((theme) => ({
         fontWeight: '600',
       },
       content: {
+        maxWidth: '100%',
         margin: '0 auto',
         [theme.breakpoints.down('sm')]: { 
           padding: '2px',
