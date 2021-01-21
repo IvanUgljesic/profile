@@ -127,7 +127,7 @@ export default makeStyles((theme) => ({
     padding: '3px',
     minHeight: '100%',
     background: `url(${cardBackground})`,
-    backgroundSize: 'cover',
+    backgroundSize: '100% 100%',
   },
   jokeBox: {
     width: '100%',

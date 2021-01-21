@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Tabs, Tab, Box  } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import { Route, Switch, NavLink } from "react-router-dom";
-import Admin from './components/Admin';
+import Admin from './components/Admin/Admin';
 import Profile from './components/Profile/Profile';
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
@@ -9,6 +9,7 @@ import Contact from './components/Contact/Contact';
 import NoMatch from './components/NoMatch';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Auth from './components/Admin/Auth';
 
 import { useSelector } from 'react-redux';
 
@@ -77,33 +78,19 @@ const App = () => {
       <MuiThemeProvider theme={theme}>
         <div style={themes[currentTheme.colorIndex]}>
         <Container maxWidth="lg" className={classes.root}>     
-        <Header handleChange={handleChange} a11yProps={a11yProps} NavLink={NavLink} setAnchorEl={setAnchorEl} value={value} anchorEl={anchorEl} />  
+        { currentPage !== '/admin' && currentPage !== '/auth' && <Header handleChange={handleChange} a11yProps={a11yProps} NavLink={NavLink} setAnchorEl={setAnchorEl} value={value} anchorEl={anchorEl} /> } 
         <div className={classes.appBarContainer}>
-          <Box display={{ xs: 'none', sm: 'none', md: 'none' }}>
-            <Tabs
-                orientation="vertical"
-                value={value}
-                onChange={handleChange}
-                className={classes.tabs}
-                textColor='primary'
-                TabIndicatorProps={{style: {background:currentTheme.color}}}                
-            >
-                <Tab style={{ color: currentTheme.color, opacity: value === 0 ? 1:0.7}} className={classes.link} label="Profile" {...a11yProps(0)} component={NavLink} to="/"/>
-                <Tab style={{ color: currentTheme.color, opacity: value === 1 ? 1:0.7}} className={classes.link} label="Skills" {...a11yProps(1)} component={NavLink} to="/skills"/>
-                <Tab style={{ color: currentTheme.color, opacity: value === 2 ? 1:0.7}} className={classes.link} label="Projects" {...a11yProps(2)} component={NavLink} to="/projects"/>
-                <Tab style={{ color: currentTheme.color, opacity: value === 3 ? 1:0.7}} className={classes.link} label="Contact" {...a11yProps(3)} component={NavLink} to="/contact"/>
-            </Tabs>
-            </Box>
-            <Container className={classes.content}>
+          <Container className={classes.content}>
             <Switch>
-                <Route path="/" exact render={() => <Profile contactLink={() => setValue(3)} />} />
-                <Route path="/skills" component={Skills} />
-                <Route path='/projects' component={Projects} />
-                <Route path='/contact' component={Contact} />
-                <Route path='/admin' component={Admin} />
-                <Route component={NoMatch} />
+              <Route path="/" exact render={() => <Profile contactLink={() => setValue(3)} />} />
+              <Route path="/skills" component={Skills} />
+              <Route path='/projects' component={Projects} />
+              <Route path='/contact' component={Contact} />
+              <Route path='/admin' component={Admin} />
+              <Route path='/auth' component={Auth} />
+              <Route component={NoMatch} />
             </Switch>     
-            </Container>  
+          </Container>  
         </div>        
         <Footer/> 
         </Container>

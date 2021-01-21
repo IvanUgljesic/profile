@@ -18,8 +18,7 @@ const Form = ({ currentId, setCurrentId }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId): null);
-
-    console.log(post)
+    const user = JSON.parse(localStorage.getItem('profile'));
 
     useEffect(() => {
         if(post) setPostData(post);
@@ -47,6 +46,16 @@ const Form = ({ currentId, setCurrentId }) => {
             liveUrl: null
         });
 
+    }
+
+    if(!user?.result?.name) {
+        return (
+            <Paper className={classes.paper}>
+                <Typography variant="h5" align="center">
+                    Please Sign In to create a project
+                </Typography>
+            </Paper>
+        )
     }
 
     return (
