@@ -8,11 +8,8 @@ import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
 import { useHistory } from 'react-router-dom';
 
-import useStyles from './styles';
-
 const Admin = () => {
     const [currentId, setCurrentId] = useState(null);
-    const classes = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const user = JSON.parse(localStorage.getItem('profile'));

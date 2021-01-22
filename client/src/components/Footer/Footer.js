@@ -3,6 +3,7 @@ import { AppBar, Box, IconButton, withStyles, Tooltip, Typography, Grid } from '
 
 
 import { DiMongodb, DiReact, DiNodejs } from 'react-icons/di';
+import { SiMaterialUi } from 'react-icons/si';
 import { FaYoutube } from 'react-icons/fa';
 import { GitHub } from '@material-ui/icons';
 import RxjsIcon from '../Skills/rxjs';
@@ -35,6 +36,7 @@ const Footer = () => {
                 <SocialTooltip title="Node JS" arrow><IconButton className={classes.nodeIcon}><DiNodejs /></IconButton></SocialTooltip>
                 <SocialTooltip title="Express JS" arrow><IconButton className={classes.expressIcon}><img src={ExpressIcon} alt="express JS" className={classes.expressIcon}/></IconButton></SocialTooltip>        
                 <SocialTooltip title="RxJS" arrow><IconButton  className={classes.rxjsIcon}><RxjsIcon /></IconButton></SocialTooltip>        
+                <SocialTooltip title="Material-UI" arrow><IconButton className={classes.muiIcon}><SiMaterialUi /></IconButton></SocialTooltip>        
               </Box>
             </Grid>
             <Grid item xs={12} md={4} align="center">

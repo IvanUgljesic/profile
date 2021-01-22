@@ -48,4 +48,9 @@ export default makeStyles((theme) => ({
           backgroundColor: 'black'
         }
       },
+      muiIcon:{
+        '&:hover':{
+          color: '#1976d2',
+        }
+      },
 }));

@@ -87,7 +87,7 @@ const Auth = () => {
                             color="primary" 
                             fullWidth
                             onClick={renderProps.onClick} 
-                            disabled={renderProps.disabled} 
+                            disabled 
                             startIcon={<Icon />} 
                             variant="contained"
                             >
@@ -100,7 +100,7 @@ const Auth = () => {
                     />
                     <Grid container justify="flex-end">
                         <Grid item>
-                            <Button onClick={switchMode}>
+                            <Button onClick={switchMode} disabled>
                                 { isSignup ? 'Already have an account? Sign in':'Dont have an account? Sign Up' }
                             </Button>
                         </Grid>

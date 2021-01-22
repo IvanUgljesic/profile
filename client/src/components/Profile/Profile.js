@@ -1,6 +1,6 @@
 import React from 'react';
 import useStyles from './styles';
-import { Grid, Box, CardContent, Typography, IconButton, Paper, CardActions, Collapse, Tooltip, withStyles, Button, Chip } from '@material-ui/core';
+import { Grid, Box, CardContent, Typography, IconButton, Paper, CardActions, Collapse, Tooltip, withStyles, Button, Chip, Grow } from '@material-ui/core';
 import { GitHub, LinkedIn, ExpandMore } from '@material-ui/icons';
 import GeneralInfo from './GeneralInfo';
 import JokeBox from './JokeBox';
@@ -52,6 +52,7 @@ const Profile = ({ contactLink }) => {
 
 
     return (
+    <Grow in>
         <Grid container spacing={3} alignItems="flex-start" className={classes.root}>
             <Grid item sm={12} md={4} lg={3}>
                 <Grid container spacing={2} alignItems="center" className={classes.jokeAndGenInfoBox}>
@@ -141,6 +142,7 @@ const Profile = ({ contactLink }) => {
                 </Paper>
             </Grid>
         </Grid>
+    </Grow>
     )
 }
 
